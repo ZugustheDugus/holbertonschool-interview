@@ -1,25 +1,19 @@
 #!/usr/bin/python3
-"""Program to determine if a series of lockboxes can be opened"""
-
-def join(T,R):
-    """Function which joins two halves of a list"""
-    res =[]
-    for e in R:
-        res += T[e]
+''' Program to solve the lockboxes problem, determining which can be opened '''
 
 
 def canUnlockAll(boxes):
-    """function to count unlocked lockboxes"""
-    index = 0
-    total = list(set(boxes[0])| {0})
-    added = True
-    while added:
-        added = False
-    for j in join(boxes,total[index:]):
-        if j not in total:
-            total.append(j)
-            index +=1
-            added= True
-    print(total)
+    ''' Returns True if all boxes can be opened, otherwise False '''
+    availableKeys = [0]
+    for x in availableKeys:
+        for key in boxes[x]:
+            if key not in availableKeys and key < len(boxes):
+                availableKeys.append(key)
 
-    return len(total)==len(boxes)
+    x = 0
+    while x < len(boxes):
+        if x not in availableKeys:
+            return False
+        x += 1
+
+    return True
