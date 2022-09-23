@@ -3,7 +3,7 @@
 
 
 def minOperations(n):
-    ''' Finds fewest ops needed to get n 
+    ''' Finds fewest ops needed to get n
     characters to a file '''
     if n < 2 or n is None:
         return 0
