@@ -68,4 +68,4 @@ def check_neighbors(array, col, row):
             perimeter -= 1
         if col - 1 >= 0 and array[col - 1][row] == 1:
             perimeter -= 1
-    return
+    return perimeter
